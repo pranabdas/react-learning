@@ -1,26 +1,20 @@
-# React Hello World
-  
-[Go back to master branch](https://github.com/pranabdas/react-learning/tree/master)
+# React App component
 
-In this tutorial we will learn how to create the simplest React app "Hello
-World".
+[Go back to main branch](https://github.com/pranabdas/react-learning/tree/main)
 
-We are going to clear out all the files from our template react app, except 
-`index.html` in the `public` folder, and `index.js` in the `src` folder. This
-will be the content of our `index.js` file:
+Now we will separate the app component to a new file leaving our `index.js`
+clean.
 
+Our `index.js` becomes:
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './App.jsx';
 
-ReactDOM.render(
-  <>
-    <h1>Hello React! </h1>
-    <p>I am learning react and liking it. </p>
-  </>
-  ,document.getElementById('root')
-);
+ReactDOM.render(< App />, document.getElementById('root'));
 ```
 
-Note that if we have more than one html component, we need to wrap them inside a
-single component, here an empty tag. 
+We will have a new file `App.jsx` which will be our actual app.
+
+Main app is here: [my-react-app/src/App.jsx](./my-react-app/src/App.jsx)
+
