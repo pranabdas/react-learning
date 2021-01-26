@@ -1,26 +1,44 @@
-# React Hello World
-  
-[Go back to master branch](https://github.com/pranabdas/react-learning/tree/master)
+# React component
 
-In this tutorial we will learn how to create the simplest React app "Hello
-World".
+[Go back to main branch](https://github.com/pranabdas/react-learning/tree/main)
 
-We are going to clear out all the files from our template react app, except 
-`index.html` in the `public` folder, and `index.js` in the `src` folder. This
-will be the content of our `index.js` file:
+In this tutorial, we will use the react component.
 
+The content of our `index.js` file:
 ```js
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(
-  <>
-    <h1>Hello React! </h1>
-    <p>I am learning react and liking it. </p>
-  </>
-  ,document.getElementById('root')
-);
+class Heading extends React.Component {
+  render() {
+    return (
+      <>
+        <h1>Hello React! </h1>
+        <p>Now I am learning react component.</p>
+      </>
+    )
+  }
+};
+
+ReactDOM.render(< Heading />, document.getElementById('root'));
 ```
 
-Note that if we have more than one html component, we need to wrap them inside a
-single component, here an empty tag. 
+Note that the React class names must start with an uppercase letter.
+
+We could achieve the above with a function:
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+function Heading() {
+  return (
+    <>
+      <h1>Hello React! </h1>
+      <p>I am learning React and I am liking it.</p>
+    </>
+  )
+};
+
+ReactDOM.render(< Heading />, document.getElementById('root'));
+```
+
