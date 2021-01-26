@@ -1,17 +1,30 @@
 import React from 'react';
 
-const user = {
-    "firstName": "Pranab", 
-    "lastName" : "Das"
-}
+class App extends React.Component{
+  constructor(props){
+    super(props)
+    this.state = {
+      "temp": 36
+    }
+  }
 
-function App() {
+  handleChange = (e) => {
+    this.setState({
+      "temp": e.target.value
+    })
+  }
+
+  render(){
+    const tempF = this.state.temp*9/5 + 32;
+
     return(
       <>
-        <h1>React App</h1>
-        <p>Hello {user.firstName} {user.lastName}!</p>
+        <h3>Degree Celsius to Fahrenheit conversion</h3>
+        <input type='number' value={this.state.temp} onChange={this.handleChange} />
+        <p>deg C = {tempF} deg F.</p>
       </>
     )
   }
+}
 
 export default App
