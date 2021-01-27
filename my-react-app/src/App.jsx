@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function App() {
 
-  const [title, setTitle] = useState("Hello React");
-
-  const handleClick = () => {
-    (title === "Hello React") ? setTitle("Hello useState") : setTitle("Hello React")
-  };
+  const [value, setValue] = React.useState(0);
 
   return(
     <>
-      <h1>{title}</h1>
-      <button onClick={handleClick}>Change title</button>
+      <h1>Counter</h1>
+      <h4>{value}</h4>
+      <button onClick={() => setValue(value+1)}>Increase</button>
+      <button onClick={() => setValue(0)}>Reset</button>
     </>
   );
 }
