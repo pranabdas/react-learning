@@ -1,17 +1,46 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+const data = [
+  {
+    id: 1, 
+    name: "Pranab"
+  }, 
+  {
+    id: 2,
+    name: "Rupal"
+  }, 
+  {
+    id: 3,
+    name: "Bhanu"
+  }, 
+  {
+    id: 4,
+    name: "Nihit"
+  }
+];
 
 function App() {
+  const [people, setPeople] = React.useState(data);
 
-  const [title, setTitle] = useState("Hello React");
-
-  const handleClick = () => {
-    (title === "Hello React") ? setTitle("Hello useState") : setTitle("Hello React")
-  };
+  const clearItem = (id) => {
+    let newPeople = people.filter((item) => item.id !== id)
+    setPeople(newPeople); 
+  }
 
   return(
     <>
-      <h1>{title}</h1>
-      <button onClick={handleClick}>Change title</button>
+      {
+        people.map((item) => {
+          const { id, name } = item;
+          return(
+            <div key={id}>
+              <h3>{name}</h3>
+              <button onClick={() => clearItem(id)}>Clear Item</button>
+            </div>
+          );
+        })
+      }
+      <button onClick={() => setPeople([])}>Clear All Items</button>
     </>
   );
 }
