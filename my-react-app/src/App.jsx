@@ -1,17 +1,19 @@
-import React from 'react';
-
-const user = {
-    "firstName": "Pranab", 
-    "lastName" : "Das"
-}
+import React, { useState } from 'react';
 
 function App() {
-    return(
-      <>
-        <h1>React App</h1>
-        <p>Hello {user.firstName} {user.lastName}!</p>
-      </>
-    )
-  }
+
+  const [title, setTitle] = useState("Hello React");
+
+  const handleClick = () => {
+    (title === "Hello React") ? setTitle("Hello useState") : setTitle("Hello React")
+  };
+
+  return(
+    <>
+      <h1>{title}</h1>
+      <button onClick={handleClick}>Change title</button>
+    </>
+  );
+}
 
 export default App
