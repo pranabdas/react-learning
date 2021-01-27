@@ -1,15 +1,14 @@
 import React from 'react';
 
-const user = {
-    "firstName": "Pranab", 
-    "lastName" : "Das"
+const eventHandler = () => {
+    alert("Hello from event handler.");
 }
 
 function App() {
     return(
       <>
-        <h1>React App</h1>
-        <p>Hello {user.firstName} {user.lastName}!</p>
+        <h1>Event Handler</h1>
+        <button onClick={eventHandler}>Click me</button>
       </>
     )
   }
