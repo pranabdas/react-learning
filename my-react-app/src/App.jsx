@@ -2,18 +2,24 @@ import React from 'react';
 
 function App() {
 
-  const [value, setValue] = React.useState(0);
+  const [width, setWidth] = React.useState(window.innerWidth);
+
+  const getWidth = () => {
+    setWidth(window.innerWidth)
+  }
 
   React.useEffect(() => {
-    document.title = `Current number (${value})`;
+    window.addEventListener('resize', getWidth);
+
+    return () => {
+      window.removeEventListener('resize', getWidth);
+    }
   });
 
   return(
     <>
-      <h1>Counter</h1>
-      <h4>{value}</h4>
-      <button onClick={() => setValue(value+1)}>Increase</button>
-      <button onClick={() => setValue(0)}>Reset</button>
+      <h1>Browser width</h1>
+      <h4>Width = {width}</h4>
     </>
   );
 }
