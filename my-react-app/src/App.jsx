@@ -4,6 +4,10 @@ function App() {
 
   const [value, setValue] = React.useState(0);
 
+  React.useEffect(() => {
+    document.title = `Current number (${value})`;
+  });
+
   return(
     <>
       <h1>Counter</h1>
