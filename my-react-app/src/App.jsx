@@ -1,19 +1,38 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 function App() {
 
-  const [title, setTitle] = useState("Hello React");
-
-  const handleClick = () => {
-    (title === "Hello React") ? setTitle("Hello useState") : setTitle("Hello React")
-  };
+  const [show, setShow] = React.useState(false);
 
   return(
     <>
-      <h1>{title}</h1>
-      <button onClick={handleClick}>Change title</button>
+      <h1>Show/hide elements</h1>
+      <button onClick={() => {setShow(!show)}}>Show/hide</button>
+      {show && <Item />}
     </>
   );
+};
+
+const Item = () => {
+  const [size, setSize] = React.useState(window.innerWidth);
+
+  const getSize = () => {
+    setSize(window.innerWidth);
+  }; 
+
+  React.useEffect(() => {
+    window.addEventListener('resize', getSize);
+    return () => {
+      window.removeEventListener('resize', getSize);
+    }
+  }, []);
+
+  return (
+    <>
+      <h1>Window size</h1>
+      <h2>{size}px</h2>
+    </>
+  )
 }
 
 export default App
