@@ -1,6 +1,6 @@
 # React form
-  
-[Go back to master branch](https://github.com/pranabdas/react-learning/tree/master)
+
+[Go back to main branch](https://github.com/pranabdas/react-learning/tree/main)
 
 Main app is here: [my-react-app/src/App.jsx](./my-react-app/src/App.jsx)
 
