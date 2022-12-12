@@ -49,3 +49,4 @@ In this repository I have several tutorials on separate branches.
 19. [Form with multiple input](https://github.com/pranabdas/react-learning/tree/19-form-multi-input)
 20. [Redux counter](https://github.com/pranabdas/react-learning/tree/20-redux-counter)
 21. [auth0](https://github.com/pranabdas/react-learning/tree/21-auth0)
+22. [Webworker](https://github.com/pranabdas/react-learning/tree/22-web-worker) (using [Shopify `web-worker`](https://github.com/pranabdas/react-learning/tree/22-web-worker-shopify))
