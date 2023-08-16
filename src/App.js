@@ -1,9 +1,15 @@
-import { useState } from "react";
-import data from "./Data";
+import { useState, useEffect } from "react";
+import axios from "axios";
 
 function App() {
-  const [notes, setNotes] = useState(data);
+  const [notes, setNotes] = useState([]);
   const [newNote, setNewNote] = useState("");
+
+  useEffect(() => {
+    axios.get("http://localhost:3001/data").then((response) => {
+      setNotes(response.data);
+    });
+  }, []);
 
   const addNote = (event) => {
     event.preventDefault();
@@ -12,7 +18,7 @@ function App() {
       important: false,
       id: notes.length + 1,
     };
-    
+
     setNotes(notes.concat(newNoteObject));
     setNewNote("");
   };
