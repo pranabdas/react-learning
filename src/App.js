@@ -16,11 +16,12 @@ function App() {
     const newNoteObject = {
       content: newNote,
       important: false,
-      id: notes.length + 1,
     };
 
-    setNotes(notes.concat(newNoteObject));
-    setNewNote("");
+    axios.post("http://localhost:3001/data", newNoteObject).then((response) => {
+      setNotes(notes.concat(response.data)); // this creates a new copy of notes
+      setNewNote("");
+    });
   };
 
   const handleNoteChange = (event) => {

@@ -17,7 +17,9 @@ json-server --port 3001 --watch db.json
 ```
 
 We can visit <http://localhost:3001/data> from our browser. If you are on a
-GitHub Codespaces, you may need to add `--host 0.0.0.0` flag.
+GitHub Codespaces, you may need to add `--host 0.0.0.0` flag. However, there are
+other issues related to cross-origin policy while working on Codespaces, please
+try on local machine if find similar issues.
 
 2. We can run `json-server` using `npx` without any installation:
 
