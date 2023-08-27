@@ -1,8 +1,7 @@
 function App() {
   return (
     <>
-      <h1>Hello React! </h1>
-      <p>I am learning react and liking it. </p>
+      <h1>Cypress end-to-end testing</h1>
     </>
   );
 }

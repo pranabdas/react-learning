@@ -1,23 +1,18 @@
-# React Hello World
+# Cypress e2e testing
 
 [Go back to main branch](https://github.com/pranabdas/react-learning/tree/main)
 
-In this tutorial we will learn how to create the simplest React app "Hello
-World".
+In this tutorial we will learn how to write and run end-to-end testing using
+cypress.io.
 
-We have cleared out some of the unnecessary files from our template react
-project:
+Install cypress as dev dependency in our project:
 
-```js
-function App() {
-  return (
-    <>
-      <h1>Hello React!</h1>
-      <p>I am learning react and liking it.</p>
-    </>
-  );
-}
+```console
+npm install --save-dev cypress
 ```
 
-Note that if we have more than one html component, we need to wrap them inside a
-single component, here an empty tag (called react fragment).
+We can open cypress interface by running:
+
+```console
+npx cypress open
+```
